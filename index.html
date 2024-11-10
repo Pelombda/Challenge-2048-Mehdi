@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2048</title>
+    <style>
+      /* Style général pour la page */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #faf8ef;
+      }
+
+      /* Grille de jeu */
+      #grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: repeat(4, 100px);
+        gap: 10px;
+      }
+
+      .tile {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc0b3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        font-weight: bold;
+        color: white;
+        border-radius: 5px;
+        transition: transform 0.1s ease;
+      }
+
+      /* Couleurs spécifiques aux différentes valeurs */
+      .tile-2 {
+        background-color: #eee4da;
+      }
+      .tile-4 {
+        background-color: #ede0c8;
+      }
+      .tile-8 {
+        background-color: #f2b179;
+      }
+      .tile-16 {
+        background-color: #f59563;
+      }
+      .tile-32 {
+        background-color: #f67c5f;
+      }
+      .tile-64 {
+        background-color: #f65e3b;
+      }
+      .tile-128 {
+        background-color: #edcf72;
+      }
+      .tile-256 {
+        background-color: #edcc61;
+      }
+      .tile-512 {
+        background-color: #edc850;
+      }
+      .tile-1024 {
+        background-color: #edc53f;
+      }
+      .tile-2048 {
+        background-color: #edc22e;
+      }
+
+      /* Style pour le score */
+      #score {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      /* Message de victoire */
+      #win-message {
+        display: none;
+        font-size: 32px;
+        font-weight: bold;
+        color: green;
+        margin-top: 20px;
+      }
+
+      /* Message de défaite */
+      #game-over-message {
+        display: none;
+        font-size: 32px;
+        font-weight: bold;
+        color: red;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      /* Style pour les boutons */
+      button {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+        margin: 10px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="score">Score: 0</div>
+      <div id="grid-container"></div>
+      <div id="win-message">Vous avez gagné ! 🎉</div>
+      <div id="game-over-message">Game Over! Aucun mouvement possible 😞</div>
+      <div>
+        <button id="reset-button">Réinitialiser</button>
+        <button id="continue-button">Continuer</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
